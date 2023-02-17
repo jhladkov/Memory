@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  background: #fafafa;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a{
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+  max-width: 1300px;
+}
+
+header{
+  padding: 20px 0;
+  background: white;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 50px;
+}
+input{
+  border-radius: 4px;
+  outline: none;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  transition: all .3s;
+  width: 100%;
+  &:focus{
+    border-color: #666;
+  }
+}
+
+button{
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  background: #000;
+  border: 1px solid transparent;
+  color: white;
+  transition: all .3s;
+  width: 100%;
+  &:hover{
+    background: #fafafa;
+    color: black;
+   border-color: black;
+  }
+}
