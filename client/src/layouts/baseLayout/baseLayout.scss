@@ -4,4 +4,9 @@
     font-weight: 700;
     font-size: 32px;
   }
+  .header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

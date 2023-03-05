@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Route, Routes, useNavigate} from "react-router-dom";
+import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import BaseLayout from "./layouts/baseLayout/BaseLayout";
 import Home from "./pages/home/Home";
 import Error from "./pages/error/Error";
@@ -16,11 +16,12 @@ const App = () => {
     const {setAuthStatus} = userSlice.actions
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const location = useLocation()
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
             dispatch(setAuthStatus(true))
-            navigate('/')
+            navigate(location.pathname || '/')
         }else {
             navigate('/login')
         }
@@ -35,10 +36,15 @@ const App = () => {
                             <Home/>
                         </RequireAuth>
                     }/>
-                    <Route path='*' element={<Error/>}/>
+                    <Route path='/*' element={
+                        <RequireAuth authStatus={isAuth}>
+                            <Home/>
+                        </RequireAuth>
+                    }/>
                 </Route>
                 <Route path='login' element={<Login/>}/>
                 <Route path='register' element={<Register/>}/>
+                <Route path='*' element={<Error/>}/>
             </Routes>
             <ToastContainer theme="dark"/>
         </div>

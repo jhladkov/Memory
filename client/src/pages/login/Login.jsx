@@ -18,10 +18,12 @@ const Login = () => {
         formState: {errors},
         handleSubmit,
 
-    } = useForm({mode: 'all'})
+    } = useForm({mode: 'onSubmit'})
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    console.log(password,email)
 
     const loginHandler = async ({password, email, username}) => {
         setDisabled(true)

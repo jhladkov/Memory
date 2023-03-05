@@ -16,7 +16,7 @@ const Register = () => {
         formState: {errors},
         handleSubmit,
 
-    } = useForm({mode: 'all'})
+    } = useForm({mode: 'onBlur'})
 
     const navigate = useNavigate()
 

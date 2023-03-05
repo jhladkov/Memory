@@ -12,6 +12,7 @@ const BaseLayout = () => {
                         <div className="header__logo">
                              Memory
                         </div>
+                        <button className='header__create'>Create section</button>
                     </div>
                 </div>
             </header>
